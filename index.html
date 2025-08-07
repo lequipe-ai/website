@@ -5,97 +5,126 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>lequipe.ai — Insight-to-Action KnowledgeOps AI Hub</title>
 
-  <!-- Embedded CSS -->
+  <!-- Embedded CSS — Material-inspired -->
   <style>
     :root {
-      --pale-orange: #FFE8D1;
-      --black: #000000;
-      --white: #FFFFFF;
+      --primary: #ffb74d;      /* pale orange (500)   */
+      --primary-dark: #f57c00; /* pale orange (800)   */
+      --on-primary: #000000;   /* black text on orange*/
+      --surface: #ffffff;      /* card / surface      */
+      --background: #fafafa;   /* page background     */
+      --on-surface: #000000;   /* text on surface     */
+      --elevation-1: 0 1px 3px rgba(0,0,0,.2), 0 1px 2px rgba(0,0,0,.14), 0 2px 1px rgba(0,0,0,.12);
+      --elevation-4: 0 4px 6px rgba(0,0,0,.2), 0 2px 4px rgba(0,0,0,.14), 0 3px 3px rgba(0,0,0,.12);
     }
 
     /* Reset & base styles */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: "Helvetica Neue", Arial, sans-serif;
-    }
-
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      background: var(--pale-orange);
-      color: var(--black);
+      font-family: Roboto, "Helvetica Neue", Arial, sans-serif;
+      background: var(--background);
+      color: var(--on-surface);
       display: flex;
       flex-direction: column;
       min-height: 100vh;
     }
 
+    /* Top App Bar */
     header {
-      padding: 2rem 1rem;
-      text-align: center;
-    }
-
-    h1 {
-      font-size: 2.5rem;
+      background: var(--primary);
+      color: var(--on-primary);
+      padding: 1rem 1.25rem;
+      font-size: 1.5rem;
       font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 0.05rem;
+      letter-spacing: .04rem;
+      box-shadow: var(--elevation-4);
     }
 
+    /* Main area */
     main {
       flex: 1;
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
-      padding: 1rem;
+      padding: 2rem 1rem;
+    }
+
+    .card {
+      background: var(--surface);
+      border-radius: .5rem;
+      box-shadow: var(--elevation-1);
+      max-width: 640px;
+      width: 100%;
+      padding: 2.5rem 2rem;
       text-align: center;
     }
 
-    .mission {
-      max-width: 800px;
-      font-size: 1.25rem;
+    .card h2 {
+      font-size: 1.75rem;
+      margin-bottom: 1.25rem;
+      font-weight: 500;
+    }
+
+    .card p {
+      font-size: 1.125rem;
       line-height: 1.6;
       margin-bottom: 2rem;
     }
 
-    .coming-soon {
-      font-size: 1.5rem;
-      font-weight: 600;
-      background: var(--black);
-      color: var(--white);
-      padding: 0.75rem 1.5rem;
-      border-radius: 4px;
+    /* Button — Material style */
+    .btn {
+      display: inline-block;
+      padding: .75rem 2rem;
+      font-size: 1rem;
+      font-weight: 500;
+      letter-spacing: .03rem;
       text-transform: uppercase;
-      letter-spacing: 0.05rem;
+      color: var(--on-primary);
+      background: var(--primary);
+      border: none;
+      border-radius: 2rem;
+      cursor: pointer;
+      transition: box-shadow .2s ease, background .2s ease;
+      box-shadow: var(--elevation-1);
+      outline: none;
+      user-select: none;
     }
+    .btn:focus-visible { box-shadow: 0 0 0 3px rgba(0,0,0,.2); }
+    .btn:hover         { background: var(--primary-dark); }
+    .btn:active        { box-shadow: var(--elevation-4); }
 
+    /* Footer */
     footer {
-      text-align: center;
       padding: 1rem;
-      font-size: 0.9rem;
+      text-align: center;
+      font-size: .875rem;
+      color: rgba(0,0,0,.6);
     }
   </style>
 </head>
 
 <body>
-  <header>
-    <h1>lequipe.ai</h1>
-  </header>
+  <!-- Top App Bar -->
+  <header>lequipe.ai</header>
 
+  <!-- Main content -->
   <main>
-    <p class="mission">
-      Our mission is to empower enterprises with autonomous, agent-driven intelligence that seamlessly transforms knowledge into actionable outcomes across every business function.
-    </p>
-    <div class="coming-soon">More details coming soon</div>
+    <div class="card">
+      <h2>Insight-to-Action KnowledgeOps AI Hub</h2>
+      <p>
+        We empower enterprises with autonomous, agent-driven intelligence that effortlessly turns organizational knowledge into executable outcomes—fueling smarter decisions and seamless cross-functional collaboration.
+      </p>
+      <button class="btn" aria-label="More details coming soon">More details&nbsp;coming&nbsp;soon</button>
+    </div>
   </main>
 
-  <footer>
-    &copy; <span id="year"></span> lequipe.ai. All rights reserved.
-  </footer>
+  <!-- Footer -->
+  <footer>&copy; <span id="year"></span> lequipe.ai&nbsp;&nbsp;|&nbsp;&nbsp;All rights reserved.</footer>
 
   <!-- Embedded JS -->
   <script>
-    // Update footer year automatically
+    /* Update year automatically */
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
