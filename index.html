@@ -1,6 +1,102 @@
-<html>
-  <body>
-    <h1>Welcome to lequipe.ai!</h1>
-    The home of AI KnowledgeOps!
-  </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>lequipe.ai — Insight-to-Action KnowledgeOps AI Hub</title>
+
+  <!-- Embedded CSS -->
+  <style>
+    :root {
+      --pale-orange: #FFE8D1;
+      --black: #000000;
+      --white: #FFFFFF;
+    }
+
+    /* Reset & base styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Helvetica Neue", Arial, sans-serif;
+    }
+
+    body {
+      background: var(--pale-orange);
+      color: var(--black);
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05rem;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .mission {
+      max-width: 800px;
+      font-size: 1.25rem;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+    }
+
+    .coming-soon {
+      font-size: 1.5rem;
+      font-weight: 600;
+      background: var(--black);
+      color: var(--white);
+      padding: 0.75rem 1.5rem;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.05rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>lequipe.ai</h1>
+  </header>
+
+  <main>
+    <p class="mission">
+      Our mission is to empower enterprises with autonomous, agent-driven intelligence that seamlessly transforms knowledge into actionable outcomes across every business function.
+    </p>
+    <div class="coming-soon">More details coming soon</div>
+  </main>
+
+  <footer>
+    &copy; <span id="year"></span> lequipe.ai. All rights reserved.
+  </footer>
+
+  <!-- Embedded JS -->
+  <script>
+    // Update footer year automatically
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
 </html>
